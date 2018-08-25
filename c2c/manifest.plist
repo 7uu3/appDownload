@@ -11,19 +11,19 @@
                     <key>kind</key>
                     <string>software-package</string>
                     <key>url</key>
-                    <string>https://7uu3.github.io/ipa/c2c.ipa</string>
+                    <string>https://7uu3.github.io/appDownload/c2c/c2c.ipa</string>
                 </dict>
                 <dict>
                     <key>kind</key>
                     <string>display-image</string>
                     <key>url</key>
-                    <string>https://down.7mp4.com/c2c/c2c57.png</string>
+                    <string>https://7uu3.github.io/appDownload/c2c/c2c57.png</string>
                 </dict>
                 <dict>
                     <key>kind</key>
                     <string>full-size-image</string>
                     <key>url</key>
-                    <string>https://down.7mp4.com/c2c/c2c512.png</string>
+                    <string>https://7uu3.github.io/appDownload/c2c/c2c512.png</string>
                 </dict>
             </array>
             <key>metadata</key>
