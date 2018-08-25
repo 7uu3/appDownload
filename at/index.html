@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>AOTONG</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body,div,img,h1,p{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url("bg-left.png"),url("bg-right.png");
+            background-repeat: no-repeat;
+            background-size: 18%;
+            background-position: top left,top right;
+        }
+        .container{
+            height: 100%;
+        }
+        .container .main{
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .container .main .logo{
+            margin-bottom: 30px;
+        }
+        .container .main .logo img{
+            width: 120px;
+            height: 120px;
+            border-radius: 17.54%;
+        }
+        .container .main .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .container .main .title h1{
+            font-size: 24px;
+            font-weight: 400;
+        }
+        .container .main .title img{
+            width: 26px;
+            height: 26px;
+            margin-right: 10px;
+        }
+        .container .main .release{
+            width: 60%;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #a9b1b3;
+            padding-top: 15px;
+            margin-bottom: 15px;
+        }
+        .container .main .release p{
+            margin-bottom: 10px;
+        }
+        .container .main .release img{
+            width: 26px;
+            height: 26px;
+            vertical-align: middle;
+        }
+        .container .main .download a{
+            display: inline-block;
+            line-height: 1.5;
+            background-color: #32b2a7;
+            border: 1px solid #d9d9d9;
+            border-radius: 999px;
+            padding: 10px 24px;
+            font-size: 16px;
+            color: #fff;
+        }
+        .container .main .download a:hover,
+        .container .main .download a:link,
+        .container .main .download a:visited,
+        .container .main .download a:active{
+            text-decoration: none;
+            color: #fff;
+        }
+        .layer{
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        .layer .layer-content{
+            width: 160px;
+            height: 40px;
+            line-height: 20px;
+            background: #32b2a7;
+            border-radius: 12px;
+            padding: 10px 0;
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+        }
+        .layer .layer-content i{
+            border-width: 12px;
+            border-style:solid dashed dashed;
+            border-color: transparent transparent  #32b2a7 transparent;
+            position: absolute;
+            top: -24px;
+            right: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Android -->
+        <div class="main" id="android" style="display: none;">
+            <div class="logo"><img src="logo.png"></div>
+            <div class="title"><img src="icon-android.png"><h1>AOTONG</h1></div>
+            <div class="release"></div>
+            <div class="download"><a href="https://down.7mp4.com/at/at.apk" id="btn">Android 下载安装</a></div>
+        </div>
+        <!-- iOS -->
+        <div class="main" id="ios" style="display: none;">
+            <div class="logo"><img src="logo.png"></div>
+            <div class="title"><img src="icon-ios.png"><h1>AOTONG</h1></div>
+            <div class="release">
+                <p>安装后进行如下设置</p>
+                <p><img src="icon-down.png"></p>
+                <p>iOS 手机设置——通用——设备管理——信任此应用方可使用</p>
+            </div>
+            <div class="download"><a href="itms-services://?action=download-manifest&url=https://7uu3.github.io/appDownload/at/manifest.plist">iOS 下载安装</a></div>
+        </div>
+    </div>
+    <div class="layer" id="layer" style="display: none">
+        <div class="layer-content"><i></i><p>请点击右上角</p><p>选择“浏览器中打开”</p></div>
+    </div>
+<script>
+// 判断手机类型
+// 
+    window.onload = function(){
+
+        var uA = navigator.userAgent,
+            isAndroid = uA.indexOf('Android') > -1 || uA.indexOf('Linux') > -1,
+            isIOS = !!uA.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+
+        var Android = document.getElementById('android'),
+            iOS = document.getElementById('ios');
+
+        if (isAndroid) {
+
+            Android.style.display="flex";
+        } 
+        else if(isIOS){
+
+            iOS.style.display="flex";
+        }
+    }
+// 微信浏览器
+// 
+    var isWeixin = navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger";
+
+    var btn = document.getElementById('btn'),
+        layer = document.getElementById('layer');
+
+    btn.onclick = function(){
+
+        if (isWeixin) {
+
+            layer.style.display = "block";
+            return false;
+        } else {
+
+            return true;
+        }
+        
+    }
+</script>
+</body>
+</html> 
